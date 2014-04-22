@@ -49,18 +49,16 @@ static int MetronomeSoundDuration = .05;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Prepare players
+    //
+    [self.tickPlayer prepareToPlay];
+    [self.tockPlayer prepareToPlay];
+    
     
     // Defaults values
     //
     self.bpmValue = 120;
     self.bpcValue = 8;
-    
-    int value = 0;
-    NSLog(@"Starting value %d", value); // 0
-    NSLog(@"Increment %d", value++);    // 0
-    NSLog(@"New value %d", value);      // 1
-    NSLog(@"Increment %d", ++value);    // 2
-    NSLog(@"New value %d", value);      // 2
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -87,8 +85,6 @@ static int MetronomeSoundDuration = .05;
         NSURL *url = [NSURL fileURLWithPath:soundFilePath];
         NSError *error;
         _tickPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-        _tickPlayer.enableRate = YES;
-        [_tickPlayer prepareToPlay];
         _tickPlayer.delegate = self;
     }
     
@@ -103,7 +99,6 @@ static int MetronomeSoundDuration = .05;
         NSURL *url = [NSURL fileURLWithPath:soundFilePath];
         NSError *error;
         _tockPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-        _tockPlayer.enableRate = YES;
         [_tockPlayer prepareToPlay];
         _tockPlayer.delegate = self;
     }
