@@ -3,7 +3,7 @@ Metronome
 
 A metronome application that does the job. It uses a given Beats Per Minute (BPM) and Beats Per Circle (BPC) to generate tick and tock sounds.
 
-<img src="https://github.com/jbouaziz/Metronome/raw/master/Screenshot.png" alt="Metronome Screenshot" height="568" />
+<img src="https://github.com/jbouaziz/Metronome/raw/master/Screenshot.png" alt="Metronome Screenshot" width="320" height="480" />
 
 
 ### Quick Example

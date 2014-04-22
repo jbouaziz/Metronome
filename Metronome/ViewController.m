@@ -99,7 +99,6 @@ static int MetronomeSoundDuration = .05;
         NSURL *url = [NSURL fileURLWithPath:soundFilePath];
         NSError *error;
         _tockPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-        [_tockPlayer prepareToPlay];
         _tockPlayer.delegate = self;
     }
     
